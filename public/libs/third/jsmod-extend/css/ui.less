@@ -1,0 +1,149 @@
+/**
+ * UI 相关样式类
+ */
+
+/**
+ * totast
+ */
+.-crm-ui-totast-container {
+    position: fixed;
+    visibility: hidden;
+    z-index: 9999;
+    min-width: 150px;
+    text-align: center;
+}
+
+.-crm-ui-notify-container {
+    position: relative;
+    border: 1px solid #faebcc;
+    padding: 20px;
+    width: 300px;
+
+    color: #8a6d3b;
+    background-color: #fcf8e3;
+
+    line-height: 20px;
+    border-radius: 4px;
+
+    .-crm-ui-notify-close {
+        position: absolute;
+        padding: 5px;
+        right: 0px;
+        top: 0px;
+    }
+}
+
+.-crm-ui-xinput-container {
+    border: 1px solid #e1e1e8;
+    color: #3c763d;
+    background-color: #f7f7f9;
+    padding: 0 10px;
+
+    line-height: 48px;
+    font-size: 18px;
+    border-radius: 0 0 4px 4px;
+    font-weight: bold;
+}
+
+/**
+ * 自定义弹窗样式
+ */
+.mod-dialog-crm {
+    position: relative;
+    background-color: #fff;
+    border-radius: 10px;
+    border: 1px solid #dddddd;
+    padding: 0 20px 0 20px;
+
+    .mod-dialog-status {
+        display: none;
+        text-align: center;
+        font-size: 14px;
+        padding: 20px 0;
+
+        i {
+            margin-right: 5px;
+        }
+
+        .loading {
+            color: #337ab7;
+        }
+
+        .success {
+            color: #3c763d;
+        }
+
+        .error {
+            color: #a94442;
+        }
+    }
+
+    .mod-dialog-close {
+        display: none;
+        padding: 10px;
+        position: absolute;
+        top: 5px;
+        right: 10px;
+        font-size: 21px;
+        font-weight: 700;
+        line-height: 1;
+        color: #000;
+        text-shadow: 0 1px 0 #fff;
+        opacity: .2;
+
+        &:hover,
+        &:focus {
+            color: #000;
+            text-decoration: none;
+            cursor: pointer;
+            opacity: .5;
+        }
+
+        &:after {
+            content: "x";
+            display: block;
+        }
+    }
+
+    .mod-dialog-title {
+        line-height: 58px;
+        border-bottom: 1px solid #dddddd;
+        text-align: center;
+        font-size: 14px;
+    }
+
+    .mod-dialog-content {
+        padding: 20px 0;
+    }
+
+    .mod-dialog-footer {
+        border-top: 1px solid #dddddd;
+        font-size: 14px;
+        padding: 20px 0;
+        text-align: center;
+
+        .mod-button {
+            display: inline-block;
+            line-height: 24px;
+            border-radius: 5px;
+            padding: 5px 30px;
+            border: 1px solid transparent;
+            text-decoration: none;
+            min-width: 100px;
+        }
+
+        .mod-button-no {
+            background-color: #fff;
+            border-color: #cccccc;
+            color: #428bca;
+        }
+
+        .mod-button-ok {
+            margin-left: 30px;
+            background-color: #428bca;
+            border-color: #357ebd;
+            color: #fff;
+        }
+    }
+
+}

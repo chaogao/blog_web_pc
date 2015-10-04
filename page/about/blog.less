@@ -1,0 +1,242 @@
+@import "/public/stylesheets/mixins/common_mixin.less";
+@import url("../components/markdown.css?__inline");
+
+/**
+ * 日志样式
+ */
+.blog-main {
+    margin-top: 50px;
+    padding: 20px 10px 0 10px;
+    box-shadow: 1px 1px 3px #DEABA6;
+    border-top: none;
+    border-left: none;
+    border-radius: 10px;
+    background: #fff;
+    overflow: hidden;
+
+    .blog-overview {
+        padding-bottom: 20px;
+
+        .title {
+            display: block;
+            animation: _down 1s linear 1;
+            text-align: center;
+            padding-bottom: 20px;
+            border-bottom: 1px dotted #e74c3c;
+            font-style: italic;
+            color: #e74c3c;
+        }
+
+        .blog-info {
+            position: absolute;
+            padding: 10px 20px;
+            background: rgba(231, 76, 60, 0.55);
+            bottom: 0;
+            right: 0;
+            font-size: 12px;
+            color: #ecf0f1;
+        }
+    }
+
+    /**
+     * 为了和 about 公用样式后续拆出来即可分离
+     */
+    .img-wrap {
+        padding-top: 100%;
+        position: relative;
+        overflow: hidden;
+        margin: 0 0 0 20px;
+        background: #333 url("../index/img/load.gif") no-repeat center center;
+
+        img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            opacity: 0;
+            .x-transition(opacity, 0.5s);
+        }
+    }
+
+    .blog-center {
+        margin-bottom: 20px;
+        min-height: 400px;
+    }
+}
+
+/**
+ * 目录相关样式
+ */
+.blog-article-category {
+    position: relative;
+    display: block;
+    padding: 10px;
+    font-size: 14px;
+    line-height: 28px;
+    overflow: hidden;
+
+    ul {
+        .x-unstyle;
+        margin-top: 5px;
+
+        a {
+            .x-transition(color, .3s);
+            text-decoration: none;
+            color: #7f8c8d;
+
+            &:hover {
+                color: #333;
+            }
+        }
+    }
+
+    li ul {
+        margin-left: 10px;
+    }
+
+    .treeview-list-root {
+        padding-left: 12px;
+    }
+
+    .treevie-leaf {
+
+    }
+
+    .treeview-node {
+        margin-bottom: 10px;
+    }
+
+    .treeview-list-fahter {
+        margin-top: 10px;
+        margin-left: 25px;
+    }
+
+    .treeview-node-father {
+        position: relative;
+
+        > a {
+            margin-bottom: 5px;
+        }
+    }
+
+    .treeview-node-father-expanded {
+        > a {
+            color: #e74c3c;
+        }
+
+        > a > .tree-menu {
+            border-color: #e74c3c;
+        }
+    }
+
+    .treeview-toggle {
+        position: absolute;
+        top: 6px;
+        left: -14px;
+        display: inline-block;
+        font-family: 'Glyphicons Halflings';
+        -webkit-font-smoothing: antialiased;
+        font-style: normal;
+        font-weight: normal;
+        line-height: 1;
+        vertical-align: text-bottom;
+        -moz-osx-font-smoothing: grayscale;
+        cursor: pointer;
+        color: #2980b9;
+        .x-transition(color, .3s);
+
+        &:before {
+            content: "\e250";
+        }
+
+        &.treeview-toggle-expanded {
+            &:before {
+                color: #e74c3c;
+                content: "\e252";
+            }
+        }
+    }
+
+    .tree-menu {
+        margin: 0 5px;
+        width: 30px;
+        height: 30px;
+        line-height: 28px;
+        border: 1px solid #2980b9;
+        border-radius: 100%;
+        display: inline-block;
+        text-align: center;
+        font-size: 12px;
+        vertical-align: 1px;
+    }
+
+    &.affix {
+        position: fixed;
+        top: 0;
+        z-index: 1;
+    }
+}
+
+.blog-article-markdown {
+    background: #fff;
+    padding: 20px;
+    margin-bottom: 30px;
+    border-left: 1px dotted #e74c3c;
+
+    .category-label {
+        position: absolute;
+        display: inline-block;
+        left: -50px;
+        top: 5px;
+        width: 40px;
+        line-height: 20px;
+        font-size: 14px;
+        background-color: #e74c3c;
+        color: #fff;
+        text-align: center;
+        border-radius: 3px;
+    }
+}
+
+/**
+ * 评论区域
+ */
+.blog-bottom {
+    padding: 20px 0;
+    background: rgba(236, 240, 241, 0.4);
+    border-top: 1px solid rgba(236, 240, 241, 1);
+
+    .blog-article-info {
+        padding: 20px;
+        font-size: 12px;
+        color: #e74c3c;
+        
+        .wrap {
+            padding: 20px 0 10px 0;
+            border-top: 1px dotted #e74c3c;
+            border-bottom: 1px dotted #e74c3c;
+        }
+
+        .label {
+            color: #e74c3c;
+        }
+    }
+}
+
+/**
+ * 多说评论重构
+ */
+#ds-thread #ds-reset .ds-meta {
+    border-bottom: none !important;
+}
+#ds-thread #ds-reset li.ds-post {
+    border-top: none !important;
+}
+#ds-thread #ds-reset .ds-post-self {
+    .x-transition(background-color, 0.4s);
+    border-top: none !important;
+
+    &:hover {
+        background-color: rgba(236, 240, 241,1.0);
+    }
+}
+

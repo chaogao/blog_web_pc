@@ -1,0 +1,79 @@
+{% extends './layouts/base.html' %}
+
+{% block script %}
+    <script src="./index/index.js"></script>
+{% endblock %}
+
+{% block app-data %}
+    {{ JSON.stringify(blog) }}
+{% endblock %}
+
+{% block style %}
+    <link rel='stylesheet' type="text/css" href='./index/index.less' />
+{% endblock %}
+
+{% block container-fluid %}
+    <div class="container-first-screen">
+        <img class="loading" src="./index/img/load.gif">
+
+        <div class="blog-bg-container"></div>
+        
+        <div class="blog-container">
+            <h3 class="title">【置顶】{{ blog.title }}</h3>
+
+            <div class="tag-list">
+                {% for item in blog.tag %}
+                    <a class="label label-primary" href="/blog/tag/{{ item }}">{{ item }}</a>
+                {% endfor %}
+            </div>
+
+            <div class="row">
+                <div class="col-md-8">
+                    <p class="desc">
+                        {{ blog.description }}
+                    </p>
+                </div>
+
+                <div class="col-md-4">
+                    <img class="figure" src="./index/img/gaochao04.jpg">
+                </div>
+            </div>
+
+            <div class="read">
+                <a href="/blog/{{ id }}?detail=1">阅读全文 <i class="glyphicon glyphicon-forward"></i></a>
+            </div>
+        </div>
+
+        <div class="more-container">
+            <a class="more-btn" href="javascript:void(0);">
+                <span class="status-default">
+                    查看其他文章 <i class="glyphicon glyphicon-menu-down -animation-updown"></i>
+                </span>
+
+                <span class="status-loading">
+                    正在加载 <i class="glyphicon glyphicon-repeat -animation-circle"></i>
+                </span>
+            </a>
+        </div>
+    </div>
+{% endblock %}
+
+
+{% block container %}
+    <div class="container-second-screen row">
+        <div class="col-md-3">
+            <ul class="tag-list nav nav-pills nav-stacked">
+                <li class="active"><a data-text="" href="javascript:void(0);">全部</a></li>
+                {% for item in tag %}
+                    <li><a data-text="{{ item.name }}" href="javascript:void(0);">{{ item.name }} <span class="badge">{{ item.count }}</span></a></li>
+                {% endfor %}
+            </ul>
+        </div>
+
+        <div class="col-md-9">
+            <div class="blog-list-container">
+
+            </div>
+        </div>
+    </div>
+{% endblock %}
