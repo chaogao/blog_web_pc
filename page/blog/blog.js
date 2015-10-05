@@ -6,7 +6,7 @@
             this.blogData = window.APP_DATA;
             this.$markdownContainer = $(".blog-article-markdown");
 
-            this.initMarkdown();
+            // this.initMarkdown();
             this.initBg();
             this.analyseCategory();
         },

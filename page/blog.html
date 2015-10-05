@@ -36,7 +36,9 @@
             <div class="col-md-3 blog-article-category"></div>
 
             <div class="col-md-9 blog-article-content">
-                <div class="blog-article-markdown markdown-body"></div>
+                <div class="blog-article-markdown markdown-body">
+                    {{ blog.content_html|safe }}
+                </div>
                 <div class="blog-article-suggest"></div>
             </div>
         </div>

@@ -77,10 +77,4 @@ fis.media('prod').match('/public/libs/third/swig.min.js', {
     })
     .media('prod').match('/public/libs/third/jsmod-extend.js', {
       packTo: '/public/pkg/aio.js'
-    })
-    .media('prod').match('/public/libs/third/marked.js', {
-      packTo: '/public/pkg/aio.js'
-    })
-    .media('prod').match('/public/libs/third/highlight/highlight.pack.js', {
-      packTo: '/public/pkg/aio.js'
     });
