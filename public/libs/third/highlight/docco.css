@@ -2,133 +2,130 @@
 Docco style used in http://jashkenas.github.com/docco/ converted by Simon Madine (@thingsinjars)
 */
 
-.hljs {
-  display: block;
-  overflow-x: auto;
-  padding: 0.5em;
+pre code {
+  display: block; padding: 0.5em;
   color: #000;
-  background: #f8f8ff;
-  -webkit-text-size-adjust: none;
+  background: #f8f8ff
 }
 
-.comment,
-.diff .header {
+pre .comment,
+pre .diff .header {
   color: #408080;
   font-style: italic;
 }
 
-.keyword,
-.assignment,
-.literal,
-.css .rule .keyword,
-.winutils,
-.javascript .title,
-.lisp .title,
-.subst {
+pre .keyword,
+pre .assignment,
+pre .literal,
+pre .css .rule .keyword,
+pre .winutils,
+pre .javascript .title,
+pre .lisp .title,
+pre .subst {
   color: #954121;
 }
 
-.number,
-.hexcolor {
+pre .number,
+pre .hexcolor {
   color: #40a070;
 }
 
-.string,
-.tag .value,
-.doctag,
-.tex .formula,
-.name {
+pre .string,
+pre .tag .value,
+pre .doctag,
+pre .tex .formula,
+pre .name {
   color: #219161;
 }
 
-.title,
-.id {
+pre .title,
+pre .id {
   color: #19469d;
 }
-.params {
+pre .params {
   color: #00f;
 }
 
-.javascript .title,
-.lisp .title,
-.subst {
+pre .javascript .title,
+pre .lisp .title,
+pre .subst {
   font-weight: normal;
 }
 
-.class .title,
-.haskell .label,
-.tex .command {
+pre .class .title,
+pre .haskell .label,
+pre .tex .command {
   color: #458;
   font-weight: bold;
 }
 
-.tag,
-.tag .title,
-.rule .property,
-.django .tag .keyword {
+pre .tag,
+pre .tag .title,
+pre .rule .property,
+pre .django .tag .keyword {
   color: #000080;
   font-weight: normal;
 }
 
-.attribute,
-.variable,
-.instancevar,
-.lisp .body {
+pre .attribute,
+pre .variable,
+pre .instancevar,
+pre .lisp .body {
   color: #008080;
 }
 
-.regexp {
+pre .regexp {
   color: #b68;
 }
 
-.class {
+pre .class {
   color: #458;
   font-weight: bold;
 }
 
-.symbol,
-.ruby .symbol .string,
-.ruby .symbol .keyword,
-.ruby .symbol .keymethods,
-.lisp .keyword,
-.tex .special,
-.input_number {
+pre .symbol,
+pre .ruby .symbol .string,
+pre .ruby .symbol .keyword,
+pre .ruby .symbol .keymethods,
+pre .lisp .keyword,
+pre .tex .special,
+pre .input_number {
   color: #990073;
 }
 
-.builtin,
-.constructor,
-.built_in,
-.lisp .title {
+pre .builtin,
+pre .constructor,
+pre .built_in,
+pre .lisp .title {
   color: #0086b3;
 }
 
-.preprocessor,
-.pragma,
-.pi,
-.doctype,
-.shebang,
-.cdata {
+pre .preprocessor,
+pre .pragma,
+pre .pi,
+pre .doctype,
+pre .shebang,
+pre .cdata {
   color: #999;
   font-weight: bold;
 }
 
-.deletion {
+pre .deletion {
   background: #fdd;
 }
 
-.addition {
+pre .addition {
   background: #dfd;
 }
 
-.diff .change {
+pre .diff .change {
   background: #0086b3;
 }
 
-.chunk {
+pre .chunk {
   color: #aaa;
 }
 
-.tex .formula {
+pre .tex .formula {
   opacity: 0.5;
 }
