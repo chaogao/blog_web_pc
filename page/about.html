@@ -22,21 +22,13 @@
             <div class="col-md-3">
                 <div class="img-wrap">
                     <img data-src="{{ blog.ext.bg }}" onload="$(this).css('opacity',1);jsmod.util.stretchImg(this, $(this).parent().width(), $(this).parent().outerHeight(), true);">
-
-                    <div class="blog-info">
-                        <p>
-                            <span href="javascript:void(0);"><i class="glyphicon glyphicon-user"></i> {{ blog.author }}</span>
-                        </p>
-
-                        <div>
-                            <span class="javascript:void(0);"><i class="glyphicon glyphicon-time"></i> {{ blog.update_time|date('Y-m-d H:i:s', -480) }}</span>
-                        </div>
-                    </div>
                 </div>
             </div>
 
             <div class="col-md-9 blog-article-content">
-                <div class="blog-article-markdown markdown-body"></div>
+                <div class="blog-article-markdown markdown-body">
+                    {{ blog.content_html|safe }}
+                </div>
                 <div class="blog-article-suggest"></div>
             </div>
         </div>

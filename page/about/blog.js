@@ -5,14 +5,7 @@
         initialize: function () {
             this.blogData = window.APP_DATA;
             this.$markdownContainer = $(".blog-article-markdown");
-
-            this.initMarkdown();
             this.initBg();
-        },
-
-        initMarkdown: function () {
-            this.$markdownContainer.html(marked(this.blogData.content));
-
         },
 
         initBg: function () {
