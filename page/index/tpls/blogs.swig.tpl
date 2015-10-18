@@ -4,7 +4,7 @@
 
         <div class="tag-list">
             {% for tagItem in item.tag %}
-                <a class="label" href="/blog/tag/{{ tagItem }}">{{ tagItem }}</a>
+                <a class="label" href="/search/tag/{{ tagItem }}">{{ tagItem }}</a>
             {% endfor %}
         </div>
 

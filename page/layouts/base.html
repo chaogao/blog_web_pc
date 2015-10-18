@@ -31,6 +31,10 @@
                     </li>
 
                     <li>
+                        <a href="/search">Search</a>
+                    </li>
+
+                    <li>
                         <a href="/about">About</a>
                     </li>
                 </ul>
@@ -64,7 +68,11 @@
         <script src="/public/libs/third/swig.min.js"></script>
         <script src="/public/libs/third/jquery.js"></script>
         <script src="/public/libs/third/jsmod.js"></script>
-        <script src="/public/libs/third/jsmod-extend.js"></script>        
+        <script src="/public/libs/third/jsmod-extend.js"></script>
+
+        <script>
+            $("a[href*='http://tongji']").hide();
+        </script>        
     </body>
     {% block script %}{% endblock %}
 </html>

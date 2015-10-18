@@ -1,5 +1,6 @@
 (function () {
     var TPL_BLOG_LIST = __inline("./tpls/blogs.swig.tpl");
+    var TPL_BLOG_EMPTY = __inline("./tpls/blogs_empty.swig.tpl");
 
     var Index = jsmod.util.klass({
         
@@ -24,7 +25,7 @@
                         .addClass("active")
                         .siblings().removeClass("active");
 
-                self.getBlogByTag($(this).data("text"));
+                self.getBlogByTag($(this).data("id"));
             });
         },
 
@@ -68,20 +69,23 @@
             });
         },
 
-        getBlogByTag: function (tag) {
+        getBlogByTag: function (id) {
             var self = this;
 
             $.ajax({
-                url: "/blogtag/" + tag,
+                url: "/blogcategory/" + id,
                 dataType: "json",
                 success: function (data) {
                     if (!data.errno) {
+                        var html;
 
                         if (data.content.length) {
-                            var html = swig.render(TPL_BLOG_LIST, {locals: {blogs: data.content}});
-
-                            $(".blog-list-container").html(html);
+                            html = swig.render(TPL_BLOG_LIST, {locals: {blogs: data.content}});
+                        } else {
+                            html = TPL_BLOG_EMPTY;
                         }
+
+                        $(".blog-list-container").html(html);
 
                         $("body").animate({
                             scrollTop: $(".container-second-screen").offset().top
