@@ -80,8 +80,12 @@
                     </div>
                 {% endif %}
 
-                <div class="desc">
-                    {{ item.description }}
+                <div class="desc markdown-body">
+                    {{ item.content_html_lite|safe }}
+                </div>
+
+                <div class="action">
+                    <a href="/blog/{{item.id}}">阅读全文 <i class="glyphicon glyphicon-forward"></i></a>
                 </div>
             </div>
         {% endfor %}

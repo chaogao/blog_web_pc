@@ -19,7 +19,7 @@
         <div class="blog-bg-container"></div>
         
         <div class="blog-container">
-            <h3 class="title">【置顶】{{ blog.title }}</h3>
+            <h3 class="title"><a href="/blog/{{blog.id}}">【置顶】{{ blog.title }}</a></h3>
 
             <div class="tag-list">
                 {% for item in blog.tag %}
@@ -40,7 +40,7 @@
             </div>
 
             <div class="read">
-                <a href="/blog/{{ id }}?detail=1">阅读全文 <i class="glyphicon glyphicon-forward"></i></a>
+                <a href="/blog/{{ blog.id }}">阅读全文 <i class="glyphicon glyphicon-forward"></i></a>
             </div>
         </div>
 

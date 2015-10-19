@@ -70,10 +70,13 @@
         },
 
         getBlogByTag: function (id) {
-            var self = this;
+            var self = this,
+                url;
+
+            url = (id !== undefined) ? '/blogcategory/" + id' : '/blogtag';
 
             $.ajax({
-                url: "/blogcategory/" + id,
+                url: url,
                 dataType: "json",
                 success: function (data) {
                     if (!data.errno) {

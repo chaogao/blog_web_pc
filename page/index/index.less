@@ -1,4 +1,5 @@
 @import "/public/stylesheets/mixins/common_mixin.less";
+@import url("../components/markdown.css?__inline");
 
 /**
  * 第一屏幕的样式
@@ -69,6 +70,11 @@
         }
 
         .title {
+            a {
+                color: #ecf0f1;
+                text-decoration: none;
+            }
+
             margin-bottom: 15px;
         }
 
@@ -90,13 +96,9 @@
 
             a {
                 font-size: 16px;
-                color: #bdc3c7;
+                color: #ecf0f1;
                 .x-transition(color, 0.3s);
                 text-decoration: none;
-
-                &:hover {
-                    color: #ecf0f1;
-                }
             }
         }
     }
@@ -196,6 +198,19 @@
 
         .desc {
             line-height: 1.8em;
+            margin-bottom: 10px;
+
+            h1,h2,h3 {
+                font-size: 16px;
+            }
+        }
+
+        .action {
+            a {
+                color: #e74c3c;
+            }
+
+            color: #e74c3c;
         }
 
         .title {

@@ -47,12 +47,21 @@
             <div class="col-md-3">
                 <div class="blog-article-info">
                     <div class="wrap">
-                        <p>
-                            <i class="glyphicon glyphicon-th-list"></i> 分类：
-                            {% for tagItem in blog.tag %}
-                                <a class="label" href="/search/tag/{{ tagItem }}">{{ tagItem }}</a>
-                            {% endfor %}
-                        </p>
+                        {% if (blog.category_id) %}
+                            <p>
+                                <i class="glyphicon glyphicon-th-list"></i> 分类：
+                                <a class="label" href="/search/category/{{ blog.category_id }}">{{ blog.category_name }}</a>
+                            </p>
+                        {% endif %}
+
+                        {% if (blog.tag) %}
+                            <p>
+                                <i class="glyphicon glyphicon-tag"></i> 标签：
+                                {% for tagItem in blog.tag %}
+                                    <a class="label" href="/search/tag/{{ tagItem }}">{{ tagItem }}</a>
+                                {% endfor %}
+                            </p>
+                        {% endif %}
 
                         <p>
                             <i class="glyphicon glyphicon-user"></i> 作者：
