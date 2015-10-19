@@ -159,6 +159,7 @@
 
 .markdown-body blockquote {
   margin: 0;
+  font-size: 14px;
 }
 
 .markdown-body ul,
@@ -655,4 +656,10 @@
   z-index: 1;
   position: relative;
   border-color: #4078c0;
+}
+
+@media screen and (max-width:500px) {
+  .markdown-body {
+    font-size: 12px;
+  }
 }

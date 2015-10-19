@@ -104,23 +104,6 @@
         }
     }
 
-
-    @media screen and (max-width: 500px) {
-        .blog-container {
-            width: 95%;
-            margin-top: 30px;
-
-            .desc {
-                height: 300px;
-                overflow: hidden;
-            }
-        }
-
-        .user-head {
-            display: none;
-        }
-    }
-
     .more-container {
         display: none;
         position: absolute;
@@ -150,6 +133,54 @@
 
             .status-loading {
                 display: none;
+            }
+        }
+    }
+
+    @media screen and (max-width: 500px) {
+
+        .blog-container {
+            width: 95%;
+            height: 80%;
+            margin-top: 15px;
+            padding: 15px;
+            overflow: hidden;
+            display: -webkit-box;
+            -webkit-box-orient: vertical;
+
+            .title {
+                margin-bottom: 5px;
+                margin-top: 0;
+                font-size: 18px;
+                line-height: 26px;
+                height: 26px;
+            }
+
+            .detail-cotent {
+                overflow: hidden;
+                display: block;
+                -webkit-box-flex: 1;
+            }
+
+            .tag-list {
+                margin-bottom: 5px;
+            }
+
+            .read {
+                height: 22px;
+            }
+        }
+
+        .user-head {
+            display: none;
+        }
+
+        .more-container {
+            height: 40px;
+
+            .more-btn {
+                font-size: 16px;
+                line-height: 40px;
             }
         }
     }
@@ -220,6 +251,10 @@
 
             h1,h2,h3 {
                 font-size: 16px;
+
+                @media screen and (max-width:500px) {
+                    font-size: 14px;
+                }
             }
         }
 
@@ -262,6 +297,13 @@
                 .x-transition(opacity, 0.5s);
             }
         }
+    }
+
+    @media screen and (max-width: 500px) {
+        margin-top: 15px;
+        border: none;
+        box-shadow: none;
+        border-radius: 0;
     }
 }
 

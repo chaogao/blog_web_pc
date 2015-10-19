@@ -19,7 +19,7 @@
         <div class="blog-bg-container"></div>
         
         <div class="blog-container">
-            <h3 class="title"><a href="/blog/{{blog.id}}">【置顶】{{ blog.title }}</a></h3>
+            <h3 class="title"><a href="/blog/{{blog.id}}"><i class="glyphicon glyphicon-thumbs-up"></i> {{ blog.title }}</a></h3>
 
             <div class="tag-list">
                 {% for item in blog.tag %}
@@ -27,7 +27,7 @@
                 {% endfor %}
             </div>
 
-            <div class="row">
+            <div class="row detail-cotent">
                 <div class="col-md-8">
                     <p class="desc">
                         {{ blog.description }}

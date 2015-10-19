@@ -27,6 +27,10 @@
 
                 self.getBlogByTag($(this).data("id"));
             });
+
+            $(".container-first-screen").on("touchmove.first", function (e) {
+                return false;
+            });
         },
 
         showSecondScreen: function () {
@@ -53,6 +57,9 @@
                 dataType: "json",
                 success: function (data) {
                     if (!data.errno) {
+                        // 可以滚动了
+                        $(".container-first-screen").off("touchmove.first");
+
                         execScreen();
 
                         if (data.content.length) {

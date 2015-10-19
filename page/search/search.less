@@ -45,10 +45,14 @@
     .tag-container {
         display: none;
         margin-top: -1px;
-        padding: 20px;
+        padding: 2vw;
         font-size: 16px;
         border: 1px solid #ddd;
         background: #fff;
+
+        @media screen and (max-width:500px) {
+            font-size: 12px;
+        }
     }
 
     .category-container {
@@ -85,7 +89,7 @@
     .tag-container {
         a {
             display: inline-block;
-            padding: 10px 20px;
+            padding: 2vw 4vw;
             color: #7f8c8d;
             text-decoration: none;
             .x-transition(background-color, 0.5s);
@@ -112,7 +116,6 @@
 
     .keywords-container {
         margin-top: -1px;
-        padding: 20px;
         font-size: 16px;
         border: 1px solid #ddd;
         background: #fff;
@@ -132,10 +135,9 @@
 
         .btn {
             display: block;
-            width: 80px;
+            padding: 0 2vw;
             line-height: 45px;
             height: 45px;
-            padding: 0;
         }
     }
  }
@@ -186,7 +188,7 @@
     }
 
     .blog-detail {
-        padding: 15px 10px 20px 10px;
+        padding: 0 10px 20px 10px;
         border-bottom: 1px dotted #bdc3c7;
 
         .title,
@@ -210,6 +212,10 @@
 
             h1,h2,h3 {
                 font-size: 16px;
+
+                @media screen and (max-width:500px) {
+                    font-size: 14px;
+                }
             }
         }
 
@@ -252,5 +258,9 @@
                 .x-transition(opacity, 0.5s);
             }
         }
+    }
+
+    @media screen and (max-width:500px) {
+        margin-top: 10px;       
     }
 }
