@@ -73,6 +73,7 @@
             a {
                 color: #ecf0f1;
                 text-decoration: none;
+                line-height: 1.4em;
             }
 
             margin-bottom: 15px;
@@ -100,6 +101,23 @@
                 .x-transition(color, 0.3s);
                 text-decoration: none;
             }
+        }
+    }
+
+
+    @media screen and (max-width: 500px) {
+        .blog-container {
+            width: 95%;
+            margin-top: 30px;
+
+            .desc {
+                height: 300px;
+                overflow: hidden;
+            }
+        }
+
+        .user-head {
+            display: none;
         }
     }
 

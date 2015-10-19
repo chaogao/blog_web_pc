@@ -7,31 +7,37 @@
 .search-bg-container {
     position: relative;
     background-color: rgba(192, 57, 43, 0.8);
-    padding-top: 35%;
     overflow: hidden;
     background: #333 url("../index/img/load.gif") no-repeat center center;
+    padding-bottom: 40px;
+    background-size: cover;
+    background-repeat: no-repeat;
 
     img {
         position: absolute;
         top: 0;
         left: 0;
         opacity: 0;
+        z-index: 0;
         .x-transition(opacity, 0.5s);
     }
 }
 
  .search-tab {
-    position: absolute;
-    top: 0;
-    left: 0;
-    bottom: 0;
-    right: 0;
+    position: relative;
+    z-index: 1;
 
     .nav-container {
         width: 70%;
         margin: 5% auto 0 auto;
         padding: 20px;
         background: rgba(236, 240, 241,1.0);
+    }
+
+    @media screen and (max-width: 500px) {
+        .nav-container {
+            width: 95%;
+        }
     }
 
     .keywords-container,
@@ -146,6 +152,12 @@
     border-left: none;
     border-radius: 10px;
     background: #fff;
+
+    .no-result {
+        text-align: center;
+        color: #e74c3c;
+        font-size: 16px;
+    }
 
     .tag-list {
         &.nav-pills > li.active > a,

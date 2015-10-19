@@ -13,8 +13,7 @@
 {% endblock %}
 
 {% block container-fluid %}
-    <div class="search-bg-container">
-        <img data-src="{{ searchBg }}" onload="$(this).css('opacity',1);jsmod.util.stretchImg(this, $(this).parent().width(), $(this).parent().outerHeight(), true);">
+    <div class="search-bg-container" style="background-image:url({{searchBg}})">
 
         <div class="container search-tab">
 
@@ -53,41 +52,47 @@
 
 
 {% block container %}
-    <div class="result-container">
-        {% for item in blog %}
-            <div class="blog-detail">
-                <h3 class="title"><a href="/blog/{{item.id}}">{{ item.title }}</a></h3>
+    {% if (blog !== undefined) %}
+        <div class="result-container">
+            {% for item in blog %}
+                <div class="blog-detail">
+                    <h3 class="title"><a href="/blog/{{item.id}}">{{ item.title }}</a></h3>
 
-                <div class="tag-list">
-                    {% for tagItem in item.tag %}
-                        <a class="label" href="/search/tag/{{ tagItem }}">{{ tagItem }}</a>
-                    {% endfor %}
-                </div>
-
-                <div class="info">
-                    <p>
-                        <a href="javascript:void(0);"><i class="glyphicon glyphicon-user"></i> {{ item.author }}</a>
-                    </p>
-
-                    <p>
-                        <span class="javascript:void(0);"><i class="glyphicon glyphicon-time"></i> {{ item.update_time|date('Y-m-d H:i:s', -480) }}</span>
-                    </p>
-                </div>
-
-                {% if (item.ext.bg) %}
-                    <div class="img-wrap">
-                        <img data-src="{{ item.ext.bg }}" onload="$(this).css('opacity',1);jsmod.util.stretchImg(this, $(this).parent().width(), $(this).parent().outerHeight(), true);">
+                    <div class="tag-list">
+                        {% for tagItem in item.tag %}
+                            <a class="label" href="/search/tag/{{ tagItem }}">{{ tagItem }}</a>
+                        {% endfor %}
                     </div>
-                {% endif %}
 
-                <div class="desc markdown-body">
-                    {{ item.content_html_lite|safe }}
-                </div>
+                    <div class="info">
+                        <p>
+                            <a href="javascript:void(0);"><i class="glyphicon glyphicon-user"></i> {{ item.author }}</a>
+                        </p>
 
-                <div class="action">
-                    <a href="/blog/{{item.id}}">阅读全文 <i class="glyphicon glyphicon-forward"></i></a>
+                        <p>
+                            <span class="javascript:void(0);"><i class="glyphicon glyphicon-time"></i> {{ item.update_time|date('Y-m-d H:i:s', -480) }}</span>
+                        </p>
+                    </div>
+
+                    {% if (item.ext.bg) %}
+                        <div class="img-wrap">
+                            <img data-src="{{ item.ext.bg }}" onload="$(this).css('opacity',1);jsmod.util.stretchImg(this, $(this).parent().width(), $(this).parent().outerHeight(), true);">
+                        </div>
+                    {% endif %}
+
+                    <div class="desc markdown-body">
+                        {{ item.content_html_lite|safe }}
+                    </div>
+
+                    <div class="action">
+                        <a href="/blog/{{item.id}}">阅读全文 <i class="glyphicon glyphicon-forward"></i></a>
+                    </div>
                 </div>
-            </div>
-        {% endfor %}
-    </div>
+            {% endfor %}
+
+            {% if (blog && blog.length == 0) %}
+                <div class="no-result">啊哦，没有查询结果换个条件试试看</div>
+            {% endif %}
+        </div>
+    {% endif %}
 {% endblock %}
