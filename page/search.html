@@ -75,9 +75,9 @@
                     </div>
 
                     {% if (item.ext.bg) %}
-                        <div class="img-wrap">
+                        <a class="img-wrap"  href="/blog/{{item.id}}">
                             <img data-src="{{ item.ext.bg }}" onload="$(this).css('opacity',1);jsmod.util.stretchImg(this, $(this).parent().width(), $(this).parent().outerHeight(), true);">
-                        </div>
+                        </a>
                     {% endif %}
 
                     <div class="desc markdown-body">
