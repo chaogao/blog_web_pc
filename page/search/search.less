@@ -23,34 +23,37 @@
     }
 }
 
- .search-tab {
+/**
+ * 搜索 tab 样式
+ */
+.search-tab {
     position: relative;
     z-index: 1;
+    height: 300px;
 
     .nav-container {
-        width: 70%;
-        margin: 5% auto 0 auto;
+        width: 80%;
+        margin: 20px auto 0 auto;
         padding: 20px;
         background: rgba(236, 240, 241,1.0);
     }
 
-    @media screen and (max-width: 500px) {
-        .nav-container {
-            width: 95%;
-        }
-    }
 
     .keywords-container,
     .category-container,
     .tag-container {
         display: none;
         margin-top: -1px;
-        padding: 2vw;
+        padding: 10px 10px 5px 10px;
         font-size: 16px;
         border: 1px solid #ddd;
         background: #fff;
 
-        @media screen and (max-width:500px) {
+        &.container-show {
+            display: block;
+        }
+
+        @media screen and (max-width:600px) {
             font-size: 12px;
         }
     }
@@ -77,6 +80,10 @@
                     border: 1px solid #e74c3c;
                 }
             }
+
+            &:last-child {
+                border-bottom: none;
+            }
         }
 
         .badge {
@@ -87,11 +94,16 @@
     }
 
     .tag-container {
+        overflow: hidden;
+
         a {
             display: inline-block;
-            padding: 2vw 4vw;
+            float: left;
+            width: 33%;
+            padding: 5px;
             color: #7f8c8d;
             text-decoration: none;
+            text-align: center;
             .x-transition(background-color, 0.5s);
 
             &.active {
@@ -110,7 +122,8 @@
         }
 
         .badge {
-            vertical-align: 2px;
+            vertical-align: 0;
+            border: 1px solid #777;
         }
     }
 
@@ -140,7 +153,30 @@
             height: 45px;
         }
     }
- }
+}
+
+/**
+ * 移动适配
+ */
+@media screen and (max-width: 500px) {
+    .search-bg-container {
+        padding-bottom: 10px;
+    }
+
+    .search-tab {
+        height: 250px;
+
+        .nav-container {
+            width: 95%;
+        }
+
+        .tag-container {
+            a {
+                width: 50%;
+            }
+        }
+    }
+}
 
  /**
  * 日志列表内容
@@ -213,7 +249,7 @@
             h1,h2,h3 {
                 font-size: 16px;
 
-                @media screen and (max-width:500px) {
+                @media screen and (max-width:600px) {
                     font-size: 14px;
                 }
             }
@@ -261,7 +297,7 @@
         }
     }
 
-    @media screen and (max-width:500px) {
+    @media screen and (max-width:600px) {
         margin-top: 10px;       
     }
 }

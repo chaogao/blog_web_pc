@@ -20,9 +20,8 @@
             <div class="nav-container">
 
                 <ul class="nav nav-tabs" id="search-nav-container">
-                    <li data-target=".keywords-container" class="mod-tab-item {{ type && type.keyword && 'mod-tab-item-active' }}"><a href="javascript:void(0)">Keyword</a></li>
-                    <li data-target=".category-container" class="mod-tab-item {{ type && type.category && 'mod-tab-item-active' }}"><a href="javascript:void(0)">Category</a></li>
-                    <li data-target=".tag-container" class="mod-tab-item {{ type && type.tag && 'mod-tab-item-active' }}"><a href="javascript:void(0)">Tag</a></li>
+                    <li data-target=".category-container" class="mod-tab-item {{ (type && type.category || !type.tag) && 'mod-tab-item-active active' }}"><a href="javascript:void(0)">Category</a></li>
+                    <li data-target=".tag-container" class="mod-tab-item {{ type && type.tag && 'mod-tab-item-active active' }}"><a href="javascript:void(0)">Tag</a></li>
                 </ul>
 
                 <div class="keywords-container">
@@ -33,13 +32,13 @@
                     </div>
                 </div>
 
-                <div class="category-container">
+                <div class="category-container {{ (type && type.category || !type.tag) && 'container-show' }}">
                     {% for item in category %}
                         <a data-id="{{ item.id }}" class="{{ item.active && 'active' }}" data-text="{{ item.name }}" href="/search/category/{{item.id}}">{{ item.name }} <span class="badge">{{ item.count }}</span></a>
                     {% endfor %}
                 </div>
 
-                <div class="tag-container">
+                <div class="tag-container {{ type && type.tag && 'container-show' }}">
                     {% for item in tag %}
                         <a data-id="{{ item.id }}" class="{{ item.active && 'active' }}" data-text="{{ item.name }}" href="/search/tag/{{item.name}}">{{ item.name }} <span class="badge">{{ item.count }}</span></a>
                     {% endfor %}
