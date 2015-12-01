@@ -15,7 +15,9 @@
         
         {% block style %}{% endblock %}
 
-        <title>{{ title }}</title>
+        {% block title %}
+            <title>{{ title }}</title>
+        {% endblock %}
     </head>
     <body>
 
@@ -52,9 +54,7 @@
         </div>
 
         <div class="container blog-footer">
-            © 2015. All rights reserved. 
-            <a href="javascript:void(0)">jsmod</a>
-            <a href="javascript:void(0)">jsmod mobile</a>
+            © 2015. 晋ICP备15008555号-1
             <a href="/about">联系我</a>
             <script type="text/javascript">
             var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
@@ -69,6 +69,7 @@
         <script src="/public/libs/third/jquery.js"></script>
         <script src="/public/libs/third/jsmod.js"></script>
         <script src="/public/libs/third/jsmod-extend.js"></script>
+        <script src="/public/libs/third/bootstrap.js"></script>
 
         <script>
             $("a[href*='http://tongji']").hide();

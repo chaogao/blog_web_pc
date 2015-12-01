@@ -9,6 +9,17 @@
             // this.initMarkdown();
             this.initBg();
             this.analyseCategory();
+            this.initAffix();
+        },
+
+        initAffix: function () {
+            $(".blog-article-category").affix({
+                offset: {
+                    top: function () {
+                        return (this.top = $(".blog-article-category").offset().top);
+                    }
+                }
+            })
         },
 
         initMarkdown: function () {

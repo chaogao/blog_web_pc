@@ -1,5 +1,13 @@
 {% extends './layouts/base.html' %}
 
+{% block title %}
+    {% if typeName %}
+        <title>{{ typeName }} | 高超(gaochao)的个人网站</title>
+    {% else %}
+        <title>搜索 | 高超(gaochao)的个人网站</title>
+    {% endif %}
+{% endblock %}
+
 {% block script %}
     <script src="./search/search.js"></script>
 {% endblock %}

@@ -1,5 +1,9 @@
 {% extends './layouts/base.html' %}
 
+{% block title %}
+    <title>{{ blog.title }} | 高超(gaochao)的个人网站</title>
+{% endblock %}
+
 {% block script %}
     <script src="./blog/blog.js"></script>
 {% endblock %}
@@ -32,10 +36,10 @@
             </div>
         </div>
 
-        <div class="row blog-center">
-            <div class="col-md-3 blog-article-category"></div>
+        <div class="blog-center">
+            <div class="blog-article-category"></div>
 
-            <div class="col-md-9 blog-article-content">
+            <div class="blog-article-content">
                 <div class="blog-article-markdown markdown-body">
                     {{ blog.content_html|safe }}
                 </div>

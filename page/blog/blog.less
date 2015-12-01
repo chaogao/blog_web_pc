@@ -41,7 +41,7 @@
      * 为了和 about 公用样式后续拆出来即可分离
      */
     .img-wrap {
-        padding-top: 50%;
+        padding-top: 35%;
         position: relative;
         overflow: hidden;
         margin: 0 3vw;
@@ -60,10 +60,6 @@
         margin-bottom: 20px;
         min-height: 400px;
     }
-
-    @media screen and (max-width:500px) {
-        margin-top: 15px;
-    }
 }
 
 /**
@@ -76,6 +72,8 @@
     font-size: 14px;
     line-height: 28px;
     overflow: hidden;
+    width: 350px;
+    float: left;
 
     ul {
         .x-unstyle;
@@ -180,6 +178,13 @@
     }
 }
 
+/**
+ * blog 内容相关
+ */
+.blog-article-content {
+    margin-left: 370px;       
+}
+
 .blog-article-markdown {
     background: #fff;
     padding: 20px;
@@ -198,6 +203,24 @@
         color: #fff;
         text-align: center;
         border-radius: 3px;
+    }
+}
+
+@media screen and (max-width:600px) {
+    .blog-article-category {
+        display: none;
+    }
+
+    .blog-main {
+        margin-top: 15px;
+
+        .img-wrap {
+            padding-top: 60%;
+        }
+    }
+
+    .blog-article-content {
+        margin-left: 0;
     }
 }
 
