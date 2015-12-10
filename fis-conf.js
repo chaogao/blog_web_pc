@@ -80,4 +80,7 @@ fis.media('prod').match('/public/libs/third/swig.min.js', {
     })
     .media('prod').match('/public/libs/third/jsmod-extend.js', {
       packTo: '/public/pkg/aio.js'
+    })
+    .media('prod').match('/page/layouts/base.js', {
+      packTo: '/public/pkg/aio.js'
     });
