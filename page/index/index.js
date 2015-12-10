@@ -55,15 +55,15 @@
             $.ajax({
                 url: "/blogtag",
                 dataType: "json",
-                success: function (data) {
-                    if (!data.errno) {
+                success: function (json) {
+                    if (!json.errno) {
                         // 可以滚动了
                         $(".container-first-screen").off("touchmove.first");
 
                         execScreen();
 
-                        if (data.content.length) {
-                            var html = swig.render(TPL_BLOG_LIST, {locals: {blogs: data.content}});
+                        if (json.data.length) {
+                            var html = swig.render(TPL_BLOG_LIST, {locals: {blogs: json.data}});
 
                             $(".blog-list-container").html(html);
                         }
@@ -80,17 +80,17 @@
             var self = this,
                 url;
 
-            url = (id !== undefined) ? '/blogcategory/" + id' : '/blogtag';
+            url = (id !== undefined) ? "/blogcategory/" + id : '/blogtag';
 
             $.ajax({
                 url: url,
                 dataType: "json",
-                success: function (data) {
-                    if (!data.errno) {
+                success: function (json) {
+                    if (!json.errno) {
                         var html;
 
-                        if (data.content.length) {
-                            html = swig.render(TPL_BLOG_LIST, {locals: {blogs: data.content}});
+                        if (json.data.length) {
+                            html = swig.render(TPL_BLOG_LIST, {locals: {blogs: json.data}});
                         } else {
                             html = TPL_BLOG_EMPTY;
                         }
