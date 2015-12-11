@@ -1,6 +1,13 @@
 {% for item in blogs %}
     <div class="blog-detail">
-        <h3 class="title"><a href="/blog/{{item.id}}">{{ item.title }}</a></h3>
+        <h3 class="title">
+            <a href="/blog/{{item.id}}">{{ item.title }}</a>
+
+
+            {% if (item.ext.history) %}
+                <span class="label label-warning" title="原始文章在其他日志平台">归档文章</span>
+            {% endif %}
+        </h3>
 
         <div class="tag-list">
             {% for tagItem in item.tag %}
@@ -14,7 +21,7 @@
             </p>
 
             <p>
-                <span class="javascript:void(0);"><i class="glyphicon glyphicon-time"></i> {{ item.update_time|date('Y-m-d H:i:s', -480) }}</span>
+                <span class="javascript:void(0);"><i class="glyphicon glyphicon-time"></i> {{ item.create_time|date('Y-m-d H:i:s', -480) }}</span>
             </p>
         </div>
 

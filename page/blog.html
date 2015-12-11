@@ -30,7 +30,7 @@
                     </p>
 
                     <div>
-                        <span class="javascript:void(0);"><i class="glyphicon glyphicon-time"></i> {{ blog.update_time|date('Y-m-d H:i:s', -480) }}</span>
+                        <span class="javascript:void(0);"><i class="glyphicon glyphicon-time"></i> {{ blog.create_time|date('Y-m-d H:i:s', -480) }}</span>
                     </div>
                 </div>
             </div>
@@ -40,6 +40,12 @@
             <div class="blog-article-category"></div>
 
             <div class="blog-article-content">
+                {% if blog.ext.history %}
+                    <div class="alert alert-warning" role="alert">
+                        <i class="glyphicon glyphicon-time"></i> 发布于 : {{ blog.create_time|date('Y-m-d', -480) }}
+                        &nbsp;此篇为归档文章，很可能不再具有时效性
+                    </div>
+                {% endif %}
                 <div class="blog-article-markdown markdown-body">
                     {{ blog.content_html|safe }}
                 </div>
@@ -74,7 +80,7 @@
 
                         <p>
                             <i class="glyphicon glyphicon-time"></i> 创建：
-                            <span > {{ blog.update_time|date('Y-m-d H:i:s', -480) }}</span>
+                            <span > {{ blog.create_time|date('Y-m-d H:i:s', -480) }}</span>
                         </p>
                     </div>
                 </div>
