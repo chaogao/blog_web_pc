@@ -169,6 +169,11 @@
   margin-bottom: 0;
 }
 
+.markdown-body ul li,
+.markdown-body ol li {
+  margin-bottom: 10px;
+}
+
 .markdown-body ol ol,
 .markdown-body ul ol {
   list-style-type: lower-roman;
@@ -443,6 +448,10 @@
 .markdown-body img {
   max-width: 100%;
   box-sizing: border-box;
+  border: 6px solid #efefef;
+  display: block;
+  border-radius: 8px;
+  margin: 10px 0 5px;
 }
 
 .markdown-body code {
