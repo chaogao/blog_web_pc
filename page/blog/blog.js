@@ -17,9 +17,25 @@
                 offset: {
                     top: function () {
                         return (this.top = $(".blog-article-category").offset().top);
+                    },
+                    bottom: function () {
+                        return (this.bottom = $('.blog-bottom').outerHeight(true))
                     }
                 }
-            })
+            });
+
+            // 不断的更新吸顶位置
+            var fun = function () {
+                var af = $(".blog-article-category").data("bs.affix");
+
+                af.options.offset.bottom = $('.blog-bottom').outerHeight(true) + 80;
+
+                setTimeout(function () {
+                    fun();
+                }, 1000);
+            }
+
+            fun();
         },
 
         initMarkdown: function () {

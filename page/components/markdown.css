@@ -129,7 +129,7 @@
 .markdown-body h5,
 .markdown-body h6 {
   margin-top: 15px;
-  margin-bottom: 15px;
+  margin-bottom: 25px;
   line-height: 1.1;
 }
 
@@ -252,7 +252,7 @@
 .markdown-body h6 {
   position: relative;
   margin-top: 1.4em;
-  margin-bottom: 16px;
+  margin-bottom: 25px;
   font-weight: normal;
   line-height: 1.4;
 }
@@ -354,7 +354,7 @@
 .markdown-body table,
 .markdown-body pre {
   margin-top: 0;
-  margin-bottom: 16px;
+  margin-bottom: 26px;
 }
 
 .markdown-body hr {
